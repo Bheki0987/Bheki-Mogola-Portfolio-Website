@@ -27,29 +27,6 @@ Built with the latest modern web technologies for performance and scalability:
 -   **Responsive Design**: Fully optimized for mobile, tablet, and desktop devices.
 -   **Plain Text Content Management**: Robust content rendering system ensuring reliability and ease of updates.
 
-## 📦 Getting Started
-
-To run this project locally on your machine:
-
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/Bheki0987/Bheki-Mogola-Portfolio-Website.git
-    cd Bheki-Mogola-Portfolio-Website
-    ```
-
-2.  **Install Dependencies**
-    ```bash
-    npm install
-    ```
-
-3.  **Run the Development Server**
-    ```bash
-    npm run dev
-    ```
-
-4.  **Open in Browser**
-    Navigate to `http://localhost:5173` to view the app.
-
 ## 📬 Contact
 
 I'm always open to discussing new opportunities, collaborations, or data analytics projects.
