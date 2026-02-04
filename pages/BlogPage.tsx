@@ -18,7 +18,7 @@ const BlogPage: React.FC = () => {
                     className="mb-12 flex flex-col md:flex-row md:items-center justify-between gap-6"
                 >
                     <div>
-                        <Link to="/" className="inline-flex items-center gap-2 text-neutral-400 hover:text-white mb-4 transition-colors">
+                        <Link to="/#blog" className="inline-flex items-center gap-2 text-neutral-400 hover:text-white mb-4 transition-colors">
                             <ChevronLeft size={20} /> Back to Portfolio
                         </Link>
                         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Insights & Updates</h1>
