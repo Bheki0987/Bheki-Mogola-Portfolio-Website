@@ -10,17 +10,64 @@ const Navbar: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const [activeSection, setActiveSection] = useState('');
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+
+    // ScrollSpy Logic
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px', // Trigger when section is in the middle of viewport
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          if (id) {
+            setActiveSection(id);
+            // Update URL hash without adding to history stack
+            if (location.pathname === '/') {
+              window.history.replaceState(null, '', `#${id}`);
+            }
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Oberve all sections from NAV_ITEMS + specific ones if needed
+    NAV_ITEMS.forEach(item => {
+      const id = item.href.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    // Also observe Hero if it has an ID, or handle "top" case
+    // Assuming Hero doesn't have an ID in NAV_ITEMS but is top of page.
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
+  }, [location.pathname]);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
+
+    if (href === '/') {
+      navigate('/');
+      window.scrollTo(0, 0);
+      window.history.replaceState(null, '', '/');
+      return;
+    }
 
     if (href === '#') {
       if (location.pathname !== '/') {
@@ -55,8 +102,8 @@ const Navbar: React.FC = () => {
       }`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a
-          href="#"
-          onClick={(e) => handleNavClick(e, '#')}
+          href="/"
+          onClick={(e) => handleNavClick(e, '/')}
           className="flex items-center gap-2 text-white group cursor-pointer"
         >
           <div className="p-1.5 rounded bg-white text-black border border-white group-hover:bg-black group-hover:text-white transition-all duration-300">
