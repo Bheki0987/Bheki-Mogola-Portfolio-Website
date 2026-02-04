@@ -10,7 +10,7 @@ const About: React.FC = () => (
                         src={PROFILE_PIC}
                         onError={(e) => {
                             const target = e.target as HTMLImageElement;
-                        
+
                         }}
                         alt="Bheki Mogola"
                         className="w-full h-full object-cover"
@@ -22,10 +22,11 @@ const About: React.FC = () => (
                         <strong className="text-white">BCom in Information Systems graduate</strong> focused on Data Analytics and Business Intelligence.
                         I use <strong className="text-white">SQL</strong> and <strong className="text-white">Python</strong> for data cleaning, exploratory data analysis (EDA), and modelling,
                         and I translate data into clear insights through <strong className="text-white">Excel</strong> and dashboards in <strong className="text-white">Tableau. </strong>
+                        I also have a strong foundation in <strong className="text-white">Web Development</strong>, allowing me to build custom analytical tools, static and dynamic web applications, and more.
                         I’m comfortable working with messy datasets, defining KPIs, and presenting findings in a way that supports data-driven decision-making.
                     </p>
                     <div className="flex flex-wrap justify-center md:justify-start gap-3">
-                        {['SQL', 'Python (Data Cleaning & EDA)', 'Modelling', 'Excel', 'Tableau', 'Power BI (Basic)'].map(tag => (
+                        {['SQL', 'Python (Data Cleaning & EDA)', 'Modelling', 'Excel', 'Tableau', 'Web Development (HTML, CSS, JavaScript, React, Node.js)'].map(tag => (
                             <span key={tag} className="px-3 py-1 bg-black border border-neutral-600 text-sm text-neutral-300 font-mono uppercase tracking-wide">
                                 {tag}
                             </span>

@@ -26,9 +26,9 @@ export const SKILLS_DATA: SkillCategory[] = [
   {
     title: 'Data Analysis & Business Intelligence',
     points: [
-      'Applied data analysis using Excel (Power Query, PivotTables, dashboards).',
-      'Exploratory data analysis (EDA), trend and variance analysis.',
-      'KPI definition and reporting.',
+      'Applied data analysis using Excel (Power Query, PivotTables, dashboards) for business insights.',
+      'Exploratory Data Analysis (EDA), trend identification, and variance analysis.',
+      'Strategic KPI definition, monitoring, and reporting.',
       'Data visualization and storytelling using Tableau and basic Power BI.'
     ],
     icon: BarChart,
@@ -36,29 +36,30 @@ export const SKILLS_DATA: SkillCategory[] = [
   {
     title: 'Business Analysis & Process Improvement',
     points: [
-      'Academic and project-based experience in requirements analysis and documentation (BRD, SRS).',
-      'Process analysis and mapping (AS-IS / TO-BE).',
-      'Understanding of SDLC concepts, user acceptance testing (UAT), and problem decomposition.',
-      'Exposure to stakeholder analysis.'
+      'Requirements analysis and comprehensive documentation (BRD, SRS) for system design.',
+      'Business process analysis, modeling, and mapping (AS-IS / TO-BE).',
+      'SDLC methodology application, User Acceptance Testing (UAT) coordination, and problem decomposition.',
+      'Stakeholder analysis and communication management.'
     ],
     icon: ClipboardList,
   },
   {
     title: 'Programming, Data & Automation',
     points: [
-      'Working knowledge of Python for data analysis (Pandas, NumPy, Matplotlib).',
-      'Practical SQL skills including data modelling, querying, analytics, and window functions.',
-      'Introductory exposure to system integration concepts and data flows.'
+      'Python for data analysis (Pandas, NumPy, Matplotlib) and automation.',
+      'SQL capabilities including data modeling, data querying, and window functions.',
+      'System integration concepts, API data flows, and database connectivity.',
+      'Full-stack Web Development (React, Node.js, HTML, CSS) for custom tools and applications.'
     ],
     icon: Code2,
   },
   {
     title: 'Generative AI & Productivity',
     points: [
-      'Responsible use of Generative AI tools (ChatGPT, Google Gemini) to support learning.',
-      'Data exploration and analytical reasoning.',
-      'Code assistance and debugging (with validation).',
-      'Documentation and structured problem-solving.'
+      'Leveraging Generative AI (ChatGPT, Google Gemini) for accelerated problem-solving and code optimization.',
+      'Generative AI-assisted data exploration and analytical reasoning.',
+      'Automated code generation, debugging, and validation.',
+      'Documentation generation and structured problem-solving frameworks.'
     ],
     icon: Bot,
   },
@@ -89,7 +90,7 @@ export const PROJECTS: Project[] = [
   {
     id: 0,
     title: 'Ubuntu National Bank',
-    category: 'Data Engineering',
+    category: 'Analytics & Database Design',
     oneLineBlurb: 'End-to-end banking analytics platform simulating a real-world financial environment with immutable transaction modeling, reconciliation, and executive KPI reporting.',
     description: 'End-to-end banking analytics platform simulating a real-world financial environment.',
     detailedDescription: 'An end-to-end banking data analytics project that models a realistic bank (Ubuntu National Bank). The project includes advanced MySQL architecture for transaction storage, immutable transaction modeling to maintain audit trails, reconciliation frameworks to validate and correct ledger state, and dashboards for executive KPIs and BI reporting. The goal is to demonstrate full-cycle data ownership from schema design and ETL through analytics and report generation.',
@@ -101,7 +102,7 @@ export const PROJECTS: Project[] = [
       'Executive KPI dashboards showing NPS, transaction volume, deposit/loan trends, and risk metrics.'
     ],
     metrics: 'Demonstrates handling of large transaction volumes (configurable seed data). Designed for auditability and regulatory-friendly reporting.',
-    tags: ['Banking', 'Data Engineering', 'MySQL', 'ETL', 'Analytics', 'Reconciliation'],
+    tags: ['Banking', 'Database Design', 'MySQL', 'ETL', 'Analytics', 'Reconciliation'],
 
     repoUrl: 'https://github.com/Bheki0987/Ubuntu-National-Bank-UNB-Data-Analytics-Project',
     image: '/Ubuntu_National_Bank_Logo_v2.jpg',
@@ -358,8 +359,8 @@ export const TIMELINE: Experience[] = [
     id: 1,
     role: 'Bachelor of Commerce in Information Systems (NQF L7)',
     company: 'North-West University',
-    date: '2022 - 2025',
-    description: '',
+    date: 'Completed 2025',
+    description: 'Specialized in Data Analytics and Business Intelligence. Final year completed.',
     modules: ['Business Intelligence', 'Statistics', 'Systems Analysis & Design', 'Database Systems', 'Project Management', 'IS Security', 'Web Programming', 'Emerging Technologies', 'Business Management'],
     type: 'Education',
   },
