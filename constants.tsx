@@ -341,6 +341,16 @@ export const ACHIEVEMENTS_DATA: Achievement[] = [
     pdfUrl: 'https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_TrcpsSrxwD2RtK66m_1758348819710_completion_certificate.pdf'
   },
   {
+    id: 6,
+    title: 'SATNAC 2025 Industry Solutions Challenge',
+    organization: 'SATNAC',
+    date: '2025',
+    type: 'Hackathons',
+    description: 'Developed a CapEx (Capital Expenditure) Dashboard for a South African telecommunications company. The solution helps managers track and optimize infrastructure investments across regions. Key features include ROI forecasting, regional spending analytics, and AI-powered insights for strategic decision-making.',
+    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Lovable AI', 'Recharts'],
+    image: '/SATNAC_2025_Certificate.png'
+  },
+  {
     id: 5,
     title: 'Data Analytics Job Simulation',
     organization: 'Deloitte Australia (Forage)',
