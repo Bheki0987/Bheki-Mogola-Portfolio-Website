@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { CERTIFICATIONS_DATA } from '../constants';
+import { Certification } from '../types';
 import { Award, ExternalLink, X, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
+import CertificationModal from './CertificationModal';
 
 const Certifications: React.FC = () => {
-  const [selectedCert, setSelectedCert] = useState<string | null>(null);
+  const [selectedCert, setSelectedCert] = useState<Certification | null>(null);
 
   return (
     <section id="certifications" className="py-24 bg-black border-t border-neutral-900">
@@ -28,7 +30,8 @@ const Certifications: React.FC = () => {
           {CERTIFICATIONS_DATA.map((cert) => (
             <div
               key={cert.id}
-              className="group relative bg-neutral-950 border border-neutral-800 hover:border-neutral-600 transition-all duration-300 overflow-hidden"
+              onClick={() => setSelectedCert(cert)}
+              className="group relative bg-neutral-950 border border-neutral-800 hover:border-neutral-600 transition-all duration-300 overflow-hidden cursor-pointer"
             >
               {/* Image Container */}
               <div className="relative aspect-[4/3] overflow-hidden bg-neutral-900">
@@ -54,28 +57,9 @@ const Certifications: React.FC = () => {
                   {cert.title}
                 </h3>
 
-                <div className="flex flex-col gap-2">
-
-                  {cert.credentialUrl && (
-                    <a
-                      href={cert.credentialUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center text-sm text-neutral-400 hover:text-white transition-colors cursor-pointer w-fit"
-                    >
-                      <ExternalLink size={14} className="mr-2" />
-                      <span>Verify Credential</span>
-                    </a>
-                  )}
-                  {!cert.credentialUrl && (
-                    <button
-                      onClick={() => setSelectedCert(cert.image)}
-                      className="flex items-center text-sm text-neutral-400 group-hover:text-white transition-colors cursor-pointer w-fit"
-                    >
-                      <span>View Credential</span>
-                      <ExternalLink size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  )}
+                <div className="flex items-center text-sm text-neutral-400 group-hover:text-blue-400 transition-colors mt-auto">
+                  <span>View Details</span>
+                  <ExternalLink size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </div>
@@ -83,27 +67,13 @@ const Certifications: React.FC = () => {
         </div>
       </div>
 
-      {/* Full Image Modal */}
+      {/* Certification Modal */}
       {selectedCert && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
-          onClick={() => setSelectedCert(null)}
-        >
-          <button
-            onClick={() => setSelectedCert(null)}
-            className="absolute top-4 right-4 p-2 bg-white text-black hover:bg-neutral-200 transition-colors rounded-full"
-          >
-            <X size={24} />
-          </button>
-          <div className="max-w-5xl max-h-[90vh] overflow-auto">
-            <img
-              src={selectedCert}
-              alt="Certificate"
-              className="w-full h-auto"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </div>
-        </div>
+        <CertificationModal
+          cert={selectedCert}
+          isOpen={!!selectedCert}
+          onClose={() => setSelectedCert(null)}
+        />
       )}
     </section>
   );

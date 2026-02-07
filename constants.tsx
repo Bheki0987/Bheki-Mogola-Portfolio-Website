@@ -263,7 +263,9 @@ export const CERTIFICATIONS_DATA: Certification[] = [
     issuer: 'Coursera',
     date: '2025',
     image: '/certifications/Foundations_Data_Science_Certificate.png',
-    credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/7FK5UPJNSZOL'
+    credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/7FK5UPJNSZOL',
+    description: 'A comprehensive introduction to the data science field, covering the data science lifecycle, tools, and methodologies. Learned how to ask the right questions, obtain data, and prepare it for analysis.',
+    skills: ['Data Science Lifecycle', 'Data Ethics', 'Problem Solving', 'Data Strategy']
   },
   {
     id: 2,
@@ -271,7 +273,9 @@ export const CERTIFICATIONS_DATA: Certification[] = [
     issuer: 'Coursera',
     date: '2025',
     image: '/certifications/Get_Started_Python_Certificate.png',
-    credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/KREJLT1RODR7'
+    credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/KREJLT1RODR7',
+    description: 'Foundation course for Python programming. Covers syntax, data structures, control flow, functions, and working with external libraries for data tasks.',
+    skills: ['Python', 'Functions', 'Control Flow', 'Data Structures']
   },
   {
     id: 3,
@@ -279,7 +283,9 @@ export const CERTIFICATIONS_DATA: Certification[] = [
     issuer: 'Coursera',
     date: '2025',
     image: '/certifications/Power_of_Statistics_Certificate.png',
-    credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/67ZO16YYA40K'
+    credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/67ZO16YYA40K',
+    description: 'Deep dive into statistical concepts crucial for data analysis. Topics include probability, sampling distributions, hypothesis testing, and confidence intervals.',
+    skills: ['Statistics', 'Hypothesis Testing', 'Probability', 'Distribution Analysis']
   },
   {
     id: 4,
@@ -287,7 +293,9 @@ export const CERTIFICATIONS_DATA: Certification[] = [
     issuer: 'Coursera',
     date: '2025',
     image: '/certifications/Go_Beyond_Numbers_Certificate.png',
-    credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/715LFMTPTVYL'
+    credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/715LFMTPTVYL',
+    description: 'Focused on exploratory data analysis (EDA), data visualization, and effective communication of insights. Learned to turn raw data into compelling narratives.',
+    skills: ['Data Visualization', 'Storytelling', 'Tableau', 'EDA']
   },
   {
     id: 5,
@@ -295,15 +303,19 @@ export const CERTIFICATIONS_DATA: Certification[] = [
     issuer: 'Oracle University',
     date: '2025',
     image: '/certifications/Oracle_Analytics_Certificate.png',
-    credentialUrl: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=D045420F444F7B33837A073CF249BD2E6E621C0F374E6879DD6FEE638A7C1B02'
+    credentialUrl: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=D045420F444F7B33837A073CF249BD2E6E621C0F374E6879DD6FEE638A7C1B02',
+    description: 'Professional certification demonstrating expertise in Oracle Analytics Cloud. Validates skills in data preparation, modeling, visualization, and dashboarding within the Oracle ecosystem.',
+    skills: ['Oracle Analytics Cloud', 'Data Modeling', 'Business Intelligence', 'Dashboarding']
   },
   {
     id: 6,
-    title: 'Master Microsoft PowerBI',
-    issuer: 'Alison',
-    date: '2025',
-    image: '/certifications/Master_Microsoft_PowerBI_Certificate.png',
-    credentialUrl: 'https://alison.com/certification/check/69e5d7d9e6'
+    title: 'Agentic Data & Analytics Bootcamp',
+    issuer: 'Ascend.IO',
+    date: '2026',
+    image: '/certifications/Agentic_Data_Analytics_Bootcamp.png',
+    credentialUrl: 'https://credsverse.com/credentials/465293e1-1b84-47dd-a29e-680ecf2ddabb?preview=2',
+    description: 'Advanced bootcamp focused on building autonomous data pipelines and agentic workflows. Covered data engineering best practices, automation, and AI integration in data processes.',
+    skills: ['Data Engineering', 'Agentic Workflows', 'Pipeline Automation', 'Ascend.io']
   }
 ];
 
@@ -314,7 +326,14 @@ export const ACHIEVEMENTS_DATA: Achievement[] = [
     organization: 'Mahikeng Digital Innovation Hub',
     date: 'Oct 2025',
     type: 'Hackathons',
-    description: 'Developed a climate analysis and health optimization system leveraging NASA ECOSTRESS and LANDSAT datasets. Designed to support urban planners in making data-driven decisions for sustainable environments.',
+    description: 'Developed a climate analysis and health optimization system leveraging NASA ECOSTRESS and LANDSAT datasets.',
+    detailedDescription: 'Participated in the global NASA Space Apps Challenge, developing a "Climate & Health Urban Twin" solution. Our team utilized satellite data (ECOSTRESS, LANDSAT) to model urban heat islands and their correlation with public health data. The solution aims to assist urban planners in identifying high-risk zones and optimizing green infrastructure planning.',
+    features: [
+      'Analyzed satellite imagery for thermal mapping',
+      'Correlated temperature data with health risk factors',
+      'Proposed data-driven urban planning interventions',
+      'Collaborated in a cross-functional team under time pressure'
+    ],
     tech: ['NASA Data', 'Climate Analysis', 'Urban Planning'],
     image: '/certificate_bheki_2025__n_a_s_a__space__apps__challenge.png',
   },
@@ -324,18 +343,31 @@ export const ACHIEVEMENTS_DATA: Achievement[] = [
     organization: 'Microsoft',
     date: 'June 2025',
     type: 'Hackathons',
-    description: 'Developed "SkillSwap", a community-driven skill exchange platform enabling moneyless service trading. Built a functional MVP featuring a peer-to-peer skill-matching system, trust verification protocols, and AI-assisted discovery, all wrapped in a modern, responsive UI.',
+    description: 'Developed "SkillSwap", a community-driven skill exchange platform enabling moneyless service trading.',
+    detailedDescription: 'Developed "SkillSwap", a community-driven skill exchange platform enabling moneyless service trading. Built a functional MVP featuring a peer-to-peer skill-matching system, trust verification protocols, and AI-assisted discovery, all wrapped in a modern, responsive UI. This project addressed the challenge of accessible education and service exchange in resource-constrained communities.',
+    features: [
+      'Peer-to-peer skill matching algorithm',
+      'AI-powered recommendations for skill exchanges',
+      'Reputation and trust verification system',
+      'Responsive MVP built with modern web technologies'
+    ],
     tech: ['Artificial Intelligence', 'Social Good', 'Web Development', 'Skill Matching'],
     image: '/Microsoft AI Skill Challenge Certificate.jpeg'
   },
-
   {
     id: 4,
     title: 'Data Analytics Job Simulation',
     organization: 'Tata Group (Forage)',
     date: 'Sep 2025',
     type: 'Job Simulation',
-    description: 'Conducted exploratory data analysis (EDA) using GenAI tools to assess data quality and proposed a predictive modeling framework for delinquency risk.',
+    description: 'Conducted exploratory data analysis (EDA) using GenAI tools to assess data quality and proposed a predictive modeling framework.',
+    detailedDescription: 'Completed a job simulation involving an analysis of online retail data for the Tata Group. The task required cleaning complex datasets, performing exploratory data analysis (EDA) to uncover seasonal trends, and presenting findings to executive stakeholders. Also conceptualized a predictive modeling framework to anticipate demand.',
+    features: [
+      'Data cleaning and quality assessment',
+      'Exploratory Data Analysis (EDA) on retail datasets',
+      'Visualizing revenue trends and customer behavior',
+      'Presenting strategic insights to senior management'
+    ],
     tech: ['EDA', 'Predictive Modeling', 'GenAI'],
     image: '/TATA Simulation Screenshot.png',
     pdfUrl: 'https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_TrcpsSrxwD2RtK66m_1758348819710_completion_certificate.pdf'
@@ -346,9 +378,17 @@ export const ACHIEVEMENTS_DATA: Achievement[] = [
     organization: 'SATNAC',
     date: '2025',
     type: 'Hackathons',
-    description: 'Developed a CapEx (Capital Expenditure) Dashboard for a South African telecommunications company. The solution helps managers track and optimize infrastructure investments across regions. Key features include ROI forecasting, regional spending analytics, and AI-powered insights for strategic decision-making.',
+    description: 'Developed a CapEx (Capital Expenditure) Dashboard for a South African telecommunications company.',
+    detailedDescription: 'Developed a Capital Expenditure (CapEx) Dashboard for a major telecommunications provider. The solution helps managers track and optimize infrastructure investments across regions. Key features include ROI forecasting, regional spending analytics, and AI-powered insights for strategic decision-making.',
+    features: [
+      'Interactive dashboard for CapEx tracking',
+      'ROI forecasting models',
+      'Regional infrastructure spending map',
+      'AI-driven investment recommendations'
+    ],
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'Lovable AI', 'Recharts'],
-    image: '/SATNAC_2025_Certificate.png'
+    image: '/SATNAC_2025_Certificate.png',
+    demoUrl: 'https://teleoptima-capitol-insight.lovable.app'
   },
   {
     id: 5,
@@ -356,7 +396,14 @@ export const ACHIEVEMENTS_DATA: Achievement[] = [
     organization: 'Deloitte Australia (Forage)',
     date: 'July 2025',
     type: 'Job Simulation',
-    description: 'Completed forensic technology simulation. Created data dashboards using Tableau and used Excel to classify data and draw business conclusions.',
+    description: 'Completed forensic technology simulation. Created data dashboards using Tableau and used Excel to classify data.',
+    detailedDescription: 'Participated in a forensic technology job simulation for Deloitte. The project involved analyzing transactional data to detect anomalies indicative of fraud. utilized Excel for initial data classification and Tableau to build interactive dashboards that highlight suspicious patterns for audit teams.',
+    features: [
+      'Forensic data analysis for fraud detection',
+      'Data classification and anomaly detection in Excel',
+      'Interactive Tableau dashboards for auditors',
+      'Business communication of forensic findings'
+    ],
     tech: ['Tableau', 'Forensic Analysis', 'Excel'],
     image: '/DELOITTE Simulation Screenshot.png',
     pdfUrl: 'https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_TrcpsSrxwD2RtK66m_1751489084169_completion_certificate.pdf'

@@ -48,6 +48,8 @@ export interface Certification {
   issuer: string;
   date: string;
   image: string;
+  description?: string;
+  skills?: string[];
   pdfUrl?: string;
   credentialUrl?: string;
 }
@@ -58,10 +60,14 @@ export interface Achievement {
   organization: string;
   date: string;
   description: string;
+  detailedDescription?: string;
+  features?: string[];
   type: 'Hackathons' | 'Job Simulation';
   image: string;
   tech?: string[];
   pdfUrl?: string;
+  credentialUrl?: string; // For linking to external credentials like Credly
+  demoUrl?: string; // For linking to prototypes or live demos
 }
 
 export interface BlogPost {

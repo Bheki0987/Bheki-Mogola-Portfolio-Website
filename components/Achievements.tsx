@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { ACHIEVEMENTS_DATA } from '../constants';
-import { Trophy, Code, Target, Briefcase, X, Eye } from 'lucide-react';
-import PdfViewerModal from './PdfViewerModal';
+import { Achievement } from '../types';
+import { Trophy, Code, Target, Briefcase, X, Eye, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
+import AchievementModal from './AchievementModal';
 
 const Achievements: React.FC = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [selectedPdf, setSelectedPdf] = useState<{ url: string; title: string } | null>(null);
+  const [selectedAchievement, setSelectedAchievement] = useState<Achievement | null>(null);
 
   const hackathons = ACHIEVEMENTS_DATA.filter(item => item.type === 'Hackathons');
   const simulations = ACHIEVEMENTS_DATA.filter(item => item.type === 'Job Simulation');
@@ -43,13 +43,11 @@ const Achievements: React.FC = () => {
             {hackathons.map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col bg-neutral-950 border border-neutral-800 hover:border-white/50 transition-colors duration-300 group"
+                onClick={() => setSelectedAchievement(item)}
+                className="flex flex-col bg-neutral-950 border border-neutral-800 hover:border-white/50 transition-colors duration-300 group cursor-pointer"
               >
                 {/* Image Header */}
-                <div
-                  className="h-48 overflow-hidden relative border-b border-neutral-800 cursor-pointer"
-                  onClick={() => setSelectedImage(item.image)}
-                >
+                <div className="h-48 overflow-hidden relative border-b border-neutral-800">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -76,20 +74,14 @@ const Achievements: React.FC = () => {
                     </span>
                   </div>
 
-                  <p className="text-neutral-400 text-sm leading-relaxed mb-6 flex-1">
+                  <p className="text-neutral-400 text-sm leading-relaxed mb-6 flex-1 line-clamp-3">
                     {item.description}
                   </p>
 
-                  {/* Tech Tags */}
-                  {item.tech && (
-                    <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-neutral-900">
-                      {item.tech.map((t) => (
-                        <span key={t} className="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-800 px-2 py-1">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                  <div className="flex items-center text-sm text-neutral-500 group-hover:text-white transition-colors mt-auto pt-4 border-t border-neutral-900">
+                    <span>View Project Details</span>
+                    <ExternalLink size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </div>
             ))}
@@ -121,9 +113,10 @@ const Achievements: React.FC = () => {
             {simulations.map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col bg-neutral-950 border border-neutral-800 hover:border-white/50 transition-colors duration-300 group"
+                onClick={() => setSelectedAchievement(item)}
+                className="flex flex-col bg-neutral-950 border border-neutral-800 hover:border-white/50 transition-colors duration-300 group cursor-pointer"
               >
-                {/* Image Header - Viewer logic maintained: only Hackathons (id<=3 in original, now hackathon array) open modal */}
+                {/* Image Header */}
                 <div className="h-48 overflow-hidden relative border-b border-neutral-800">
                   <img
                     src={item.image}
@@ -151,33 +144,27 @@ const Achievements: React.FC = () => {
                     </span>
                   </div>
 
-                  <p className="text-neutral-400 text-sm leading-relaxed mb-6 flex-1">
+                  <p className="text-neutral-400 text-sm leading-relaxed mb-6 flex-1 line-clamp-3">
                     {item.description}
                   </p>
 
                   {/* Tech Tags */}
-                  {item.tech && (
-                    <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-neutral-900 justify-between items-center">
+                  <div className="mt-auto pt-6 border-t border-neutral-900">
+                    <div className="flex items-center justify-between">
                       <div className="flex flex-wrap gap-2">
-                        {item.tech.map((t) => (
+                        {item.tech?.slice(0, 3).map((t) => (
                           <span key={t} className="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-800 px-2 py-1 bg-neutral-900/50">
                             {t}
                           </span>
                         ))}
                       </div>
 
-                      {item.pdfUrl && (
-                        <a
-                          href={item.pdfUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="ml-4 p-2 text-neutral-400 hover:text-white border border-neutral-800 hover:border-white transition-all rounded-sm flex items-center gap-2 text-xs font-bold"
-                        >
-                          <Eye size={14} /> View Certificate
-                        </a>
-                      )}
+                      <div className="flex items-center text-sm text-neutral-500 group-hover:text-white transition-colors">
+                        <span className="hidden sm:inline">View Details</span>
+                        <ExternalLink size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
-                  )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -185,35 +172,14 @@ const Achievements: React.FC = () => {
         </div>
       </div>
 
-      {/* Full Image Modal */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
-          onClick={() => setSelectedImage(null)}
-        >
-          <button
-            onClick={() => setSelectedImage(null)}
-            className="absolute top-4 right-4 p-2 bg-white text-black hover:bg-neutral-200 transition-colors rounded-full"
-          >
-            <X size={24} />
-          </button>
-          <div className="max-w-5xl max-h-[90vh] overflow-auto">
-            <img
-              src={selectedImage}
-              alt="Certificate"
-              className="w-full h-auto"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </div>
-        </div>
+      {/* Achievement Modal */}
+      {selectedAchievement && (
+        <AchievementModal
+          achievement={selectedAchievement}
+          isOpen={!!selectedAchievement}
+          onClose={() => setSelectedAchievement(null)}
+        />
       )}
-
-      <PdfViewerModal
-        isOpen={!!selectedPdf}
-        onClose={() => setSelectedPdf(null)}
-        pdfUrl={selectedPdf?.url || ''}
-        title={selectedPdf?.title}
-      />
     </section>
   );
 };
