@@ -128,8 +128,8 @@ const Hero: React.FC = () => {
               </h3>
               <div className="flex items-center gap-3">
                 <a
-                  href="/BHEKI_MOGOLA_RESUME_PDF.pdf"
-                  download="Bheki_Mogola_Resume.pdf"
+                  href="/BHEKI MOGOLA RESUME.pdf"
+                  download="BHEKI MOGOLA RESUME.pdf"
                   className="hidden sm:flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-white transition-colors"
                 >
                   <Download size={14} />
@@ -147,7 +147,7 @@ const Hero: React.FC = () => {
             {/* Modal Body / PDF Viewer */}
             <div className="flex-1 bg-neutral-800 relative">
               <iframe
-                src="/BHEKI_MOGOLA_RESUME_PDF.pdf"
+                src="/BHEKI MOGOLA RESUME.pdf"
                 className="w-full h-full"
                 title="Resume PDF"
               />
@@ -156,8 +156,8 @@ const Hero: React.FC = () => {
             {/* Mobile Footer (visible only on small screens) */}
             <div className="p-4 border-t border-neutral-800 bg-neutral-900 sm:hidden flex justify-center">
               <a
-                href="/BHEKI_MOGOLA_RESUME_PDF.pdf"
-                download="Bheki_Mogola_Resume.pdf"
+                href="/BHEKI MOGOLA RESUME.pdf"
+                download="BHEKI MOGOLA RESUME.pdf"
                 className="flex items-center gap-2 px-6 py-2 bg-white text-black font-bold text-sm rounded-sm"
               >
                 <Download size={16} />
