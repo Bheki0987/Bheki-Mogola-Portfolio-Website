@@ -88,6 +88,27 @@ export const SKILLS_DATA: SkillCategory[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: 8,
+    title: 'E-Commerce OTIF & Perfect Order Analytics',
+    category: 'Supply Chain Analytics',
+    oneLineBlurb: 'Strategic supply chain analytics suite identifying 38.7% OTIF failure rates and visualizing R800k+ in lost revenue opportunities.',
+    description: 'Strategic supply chain analytics suite identifying OTIF failure rates and visualizing lost revenue opportunities.',
+    detailedDescription: 'A multi-layered analytics suite designed to solve critical fulfillment challenges for a South African e-commerce leader. Leverages Python for automated data cleaning and Tableau for strategic visualization to identify operational bottlenecks and quantify revenue leakage through On-Time In-Full (OTIF) modeling.',
+    tech: ['Tableau', 'Python', 'Google Colab', 'SQL'],
+    features: [
+      'Visualizes 61.3% OTIF Rate and 72.3% In-Full bottleneck',
+      'Root cause analysis of warehouse-carrier shipping lanes',
+      'Daily operational monitoring of short shipments and returns',
+      'Quantifies revenue leakage by SKU and region'
+    ],
+    metrics: 'Identified R805k+ in lost revenue opportunities and specific carrier performance issues.',
+    tags: ['Supply Chain', 'Tableau', 'Python', 'Analytics', 'OTIF', 'Logistics'],
+
+    repoUrl: 'https://github.com/Bheki0987/E-Commerce-OTIF-Perfect-Order-Analytics.git',
+    image: '/E_Commerce_OTIF_Logo.png',
+    link: 'https://public.tableau.com/views/E-CommerceOTIFPerfectOrderAnalytics/DailyOperationsView?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link',
+  },
+  {
     id: 0,
     title: 'Ubuntu National Bank',
     category: 'Analytics & Database Design',
